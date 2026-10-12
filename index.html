@@ -1,18 +1,88 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ecom Electronics</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <h1>logo</h1>
+
+    <nav class="navbar">
+        <h2>Ecom Electronics</h2>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+            <a href="#cart">Cart 🛒</a>
+        </div>
     </nav>
-    <div
-        class = "container">
-        this is a conatainer
-    </div>
-    
+
+    <header class="hero">
+        <h1>Welcome to Ecom Electronics</h1>
+        <p>Discover the latest electronics at great prices.</p>
+        <a href="#products" class="btn">Shop Now</a>
+    </header>
+
+    <section id="products" class="products">
+        <h2>Our Products</h2>
+
+        <div class="product-container">
+
+            <div class="product-card">
+                <div class="product-image">🎧</div>
+                <h3>Wireless Headphones</h3>
+                <p>High-quality sound and comfort.</p>
+                <h3>₹1,499</h3>
+                <button onclick="addToCart('Wireless Headphones')">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">⌚</div>
+                <h3>Smart Watch</h3>
+                <p>Stay connected and track your fitness.</p>
+                <h3>₹2,499</h3>
+                <button onclick="addToCart('Smart Watch')">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">📱</div>
+                <h3>Smartphone</h3>
+                <p>Powerful performance for everyday use.</p>
+                <h3>₹12,999</h3>
+                <button onclick="addToCart('Smartphone')">
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="cart" class="cart">
+        <h2>Your Cart</h2>
+        <p id="cart-items">Your cart is empty.</p>
+    </section>
+
+    <footer id="contact">
+        <p>© 2026 Ecom Electronics | All rights reserved.</p>
+    </footer>
+
+    <script>
+        const cart = [];
+
+        function addToCart(product) {
+            cart.push(product);
+            document.getElementById("cart-items").textContent =
+                cart.join(", ");
+            alert(product + " added to cart!");
+        }
+    </script>
+
 </body>
 </html>
+```
